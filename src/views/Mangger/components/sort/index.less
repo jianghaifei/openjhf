@@ -1,0 +1,30 @@
+.sortCont {
+    border-bottom: 1px solid #f1f1f1;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .sort-item {
+      padding: 5px 10px 5px 0;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 20px;
+      .icon {
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .name {
+        flex: 1;
+        // margin-left: 10px;
+      }
+      .input-item {
+        width: 80px;
+      }
+      
+    }
+    .dnd-drag-item {
+      border-top: 1px solid #f1f1f1;
+      position: relative;
+    }
+}

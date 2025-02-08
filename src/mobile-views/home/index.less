@@ -1,0 +1,89 @@
+@designSize: 375;
+@fontSize: @designSize / 10;
+html {
+  font-size: (@fontSize / @designSize * 100vw);
+}
+
+.convertFontSize(size) {
+  font-size: size / (375 / 10) + 'rem';
+}
+
+@functions: ~`(function() {
+    this.rem = function(size) {
+      return size / (375 / 10) + 'rem';
+    }
+})()`;
+
+.mobile-home-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: ~`rem(16)`;
+  word-break: break-all;
+  padding-bottom: ~`rem(50)`;
+  box-sizing: border-box;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  img {
+    pointer-events: none;
+  }
+
+  .top-logo {
+    height: ~`rem(44)`;
+    display: flex;
+    align-items: center;
+    padding-left: ~`rem(10)`;
+
+    img {
+      width: ~`rem(128)`;
+      height: ~`rem(22)`;
+      object-fit: contain;
+    }
+  }
+
+  .banner-container {
+    width: 100%;
+    height: ~`rem(170)`;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .bottom-logo {
+    height: ~`rem(50)`;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F9F9F9;
+
+    img {
+      width: ~`rem(128)`;
+      height: ~`rem(22)`;
+      object-fit: contain;
+    }
+  }
+
+  .tip-btn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100vw;
+    height: ~`rem(50)`;
+    font-size: ~`rem(15)`;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4F8AFF;
+  }
+}
+
+

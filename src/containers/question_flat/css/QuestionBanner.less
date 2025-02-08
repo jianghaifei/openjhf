@@ -1,0 +1,62 @@
+.question-banner {
+  position: relative;
+  width: 100%;
+  height: 234px;
+
+  > .bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    > .title, > .subtitle {
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .title {
+      line-height: 48px;
+      font-size: 32px;
+    }
+
+    .subtitle {
+      line-height: 18px;
+      font-size: 12px;
+      margin-bottom: 28px;
+      margin-top: 10px;
+    }
+
+    .ant-form-item {
+      width: 636px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0 auto;
+
+      .ant-input-affix-wrapper {
+        padding: 0 0 0 10px;
+        border: none;
+
+        .ant-input-prefix {
+          color: #ccc;
+        }
+
+        .ant-input-suffix .ant-btn {
+          margin-left: 8px;
+          height: 48px;
+          border: none;
+        }
+      }
+    }
+  }
+}

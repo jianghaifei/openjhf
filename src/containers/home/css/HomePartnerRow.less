@@ -1,0 +1,28 @@
+.partner-row {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+
+  .row-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.partner-row:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

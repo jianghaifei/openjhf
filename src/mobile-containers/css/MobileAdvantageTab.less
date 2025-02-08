@@ -1,0 +1,43 @@
+@leftPadding: ~`rem(10)`;
+.mobile-advantage-tab {
+  width: calc(100vw - @leftPadding * 2);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: ~`rem(1)` solid #F7F7F7;
+
+  .mobile-tab-item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: ~`rem(8)`;
+
+    .icon {
+      width: ~`rem(22)`;
+      height: ~`rem(22)`;
+      margin-bottom: ~`rem(6)`;
+      object-fit: contain;
+    }
+
+    .text {
+      height: ~`rem(18)`;
+      font-size: ~`rem(13)`;
+      color: #333333;
+      line-height: ~`rem(18)`;
+    }
+
+    .bottom-line {
+      position: absolute;
+      left: 50%;
+      bottom: ~`rem(-4)`;
+      transform: translateX(-50%);
+      width: ~`rem(22)`;
+      height: ~`rem(10)`;
+      object-fit: contain;
+    }
+  }
+}

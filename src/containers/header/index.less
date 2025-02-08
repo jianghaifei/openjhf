@@ -1,0 +1,71 @@
+
+.openapi-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 64px;
+  background: @color_black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > .header-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: @main_width;
+    height: 100%;
+    margin: 0 auto;
+
+    .header_title{
+      color: #000;
+      font-family: "Noto Sans SC";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .header-right-container {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .header-search {
+      width: 160px;
+      height: 30px;
+      margin-right: 32px;
+
+      .ant-input-affix-wrapper {
+        box-sizing: border-box;
+        border-radius: 20px;
+        background: none;
+
+        .ant-input {
+          background: none;
+          color: #fff;
+        }
+
+        .ant-input-suffix {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

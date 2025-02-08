@@ -1,0 +1,43 @@
+.mobile-solution-common-content {
+  //min-height: ~`rem(295)`;
+
+  .banner {
+    width: 100%;
+    height: ~`rem(140)`;
+    object-fit: cover;
+    margin-bottom: ~`rem(17)`;
+  }
+
+  .desc {
+    padding: 0 ~`rem(34)`;
+    font-size: ~`rem(14)`;
+    font-weight: 500;
+    color: #CFCFCF;
+    margin-bottom: ~`rem(18)`;
+    text-align: center;
+  }
+
+  .container {
+    padding: 0 ~`rem(34)`;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+    .tag {
+      width: 33.3%;
+      font-size: ~`rem(13)`;
+      margin: 0 0 ~`rem(6)` 0;
+      color: #B2B1B1;
+      text-align: center;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .tag-center {
+    justify-content: center;
+  }
+}

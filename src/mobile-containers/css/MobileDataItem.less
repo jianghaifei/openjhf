@@ -1,0 +1,33 @@
+.mobile-data-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ~`rem(30)`;
+
+  .left, .unit {
+    font-size: ~`rem(15)`;
+    color: #333333;
+    line-height: ~`rem(21)`;
+  }
+
+  .left {
+    margin-bottom: ~`rem(2)`;
+  }
+
+  .right {
+    display: flex;
+    align-items: flex-end;
+
+    .count {
+      font-size: ~`rem(35)`;
+      font-weight: bold;
+      color: #333333;
+      line-height: ~`rem(35)`;
+      margin-right: ~`rem(2)`;
+    }
+
+    .unit {
+      margin-bottom: ~`rem(2)`;
+    }
+  }
+}

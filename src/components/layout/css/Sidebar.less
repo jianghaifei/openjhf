@@ -1,0 +1,76 @@
+@width: 242px;
+@transitionSpeed: .5s;
+.empty-div {
+  width: @width;
+  min-width: @width;
+  height: 10px;
+  transition: width @transitionSpeed;
+}
+
+.common-sidebar {
+  // left: calc((100% - @main_width) / 2);
+  top: 90px;
+  width: @width;
+  background: #FFFFFF;
+  // box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 14px 10px;
+  box-sizing: border-box;
+  max-height: calc(100vh - 120px);
+  transition: width @transitionSpeed;
+
+  .side-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    margin: 0 0 16px 10px;
+  }
+
+  > .side-content {
+    width: 100%;
+    max-height: calc(100vh - 210px);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    > .ant-menu {
+      border-right: none;
+
+      .ant-menu-submenu-title {
+        color: #333;
+      }
+
+      .ant-menu-item {
+        height: 40px;
+        color: #333333;
+        border-radius: 3px;
+        margin: 0;
+
+        &-selected {
+          background: rgba(79, 138, 255, 0.15);
+          color: @color_primary;
+        }
+
+        &-selected::after {
+          border-right: none;
+        }
+      }
+    }
+  }
+  .ant-menu-submenu-arrow{
+    color:rgba(0,0,0,.3)
+  }
+  .wider-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    opacity: .3;
+  }
+
+  // 只有最外层的1级菜单才加粗
+  .first-menu >.ant-menu-submenu-title, .first-menu >.ant-menu-title-content{
+    font-weight: bold !important;
+  }
+}

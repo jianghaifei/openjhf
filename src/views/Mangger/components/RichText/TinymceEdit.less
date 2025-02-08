@@ -1,0 +1,44 @@
+.custom-tinymce-editor,
+.preview-editor {
+  width: 100%;
+  height: 100%;
+
+  // .tox-tinymce {
+  //   height: 100% !important;
+  //   border: none !important;
+  // }
+}
+
+.custom-tinymce-editor {
+  // .tox .tox-menubar + .tox-toolbar, .tox .tox-menubar + .tox-toolbar-overlord .tox-toolbar__primary {
+  //   border-top: none;
+  // }
+
+  //更改menubar和toolbar的字体颜色
+  .tox {
+    @color: #6a6f7b;
+
+
+
+    .tox-tbtn,
+    .tox-tbtn--disabled {
+      svg {
+        fill: @color;
+      }
+    }
+
+    .tox-mbtn,
+    .tox-tbtn {
+      color: @color;
+    }
+  }
+  .tox-edit-area {
+    color: aquamarine;
+  }
+  .mce-content-body {
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

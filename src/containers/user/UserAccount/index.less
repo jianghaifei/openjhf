@@ -1,0 +1,132 @@
+.u_box {
+  color: #4a4a4a;
+}
+
+.u_title {
+  color: #000;
+  font-family: "Noto Sans SC";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 112.5% */
+  margin-bottom: 40px;
+}
+
+.u_ul_box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #4a4a4a;
+  padding: 0 20px;
+  font-size: 16px;
+
+  li {
+    margin-right: 60px;
+
+    label {
+      color: #4a4a4a;
+    }
+
+    b {
+      margin: 0 4px;
+    }
+  }
+
+  .u_btnyellow {
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: var(--Warning, #ff7a00);
+    color: #fff;
+    font-family: "Noto Sans SC";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+  }
+}
+
+.u_account {
+  padding: 20px;
+
+  .u_a_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .u_s_ul {
+    li {
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--LightgrayE1, #e1e1e1);
+      margin-bottom: 16px;
+      overflow: hidden;
+
+      div {
+        float: left;
+      }
+
+      div:nth-child(1) {
+        width: 60px;
+
+        span {
+          font-size: 30px;
+          color: #0ac706;
+        }
+      }
+
+      div:nth-child(2) {
+        width: calc(100% - 170px);
+
+        h3 {
+          color: #000;
+          font-size: 16px;
+        }
+
+        h2 {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          h4 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 14px;
+            font-weight: normal;
+            margin-right: 40px;
+            cursor: pointer;
+
+            span {
+              margin-left: 5px;
+              color: #4078FD;
+            }
+
+            h5 {
+              color: #4a4a4a;
+              font-size: 14px;
+            }
+
+            h6 {
+              margin-left: 5px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      div:nth-child(3) {
+        width: 100px;
+      }
+    }
+  }
+}
