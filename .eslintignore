@@ -1,8 +1,0 @@
-src/statics
-src/plugins
-dist/*
-node_modules/*
-config/*
-scripts/*
-build/*
-config-overrides.js

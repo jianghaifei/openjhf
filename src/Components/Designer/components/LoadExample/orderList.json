@@ -1,0 +1,91 @@
+{
+  "id": "pageID",
+  "type": "Page",
+  "props": {
+    "route": "/test",
+    "title": "测试页面"
+  },
+  "style": {},
+  "componentsTree": [
+    {
+      "id": "ROOT",
+      "type": "Container",
+      "props": {},
+      "style": {
+        "background": "#fff"
+      },
+      "name": "Container",
+      "layout": {
+        "direction": "column",
+        "grow": false,
+        "padding": "0",
+        "margin": "0",
+        "width": "100%",
+        "height": "100%",
+        "canvas": true
+      },
+      "children": [
+        {
+          "id": "gYxcigXUiO",
+          "type": "OrderListHeader",
+          "props": {},
+          "style": {},
+          "name": "Order List Header",
+          "layout": {
+            "width": "100%",
+            "height": "230px",
+            "direction": "column",
+            "canvas": false
+          },
+          "children": []
+        },
+        {
+          "id": "6epOqy03pR",
+          "type": "Container",
+          "props": {},
+          "style": {},
+          "name": "Container",
+          "layout": {
+            "direction": "row",
+            "grow": true,
+            "padding": "0",
+            "margin": "0",
+            "width": "100%",
+            "height": "810px",
+            "canvas": true
+          },
+          "children": [
+            {
+              "id": "Rg8268xWkm",
+              "type": "OrderListSidebar",
+              "props": {},
+              "style": {},
+              "name": "Order List Items",
+              "layout": {
+                "width": "610px",
+                "height": "100%",
+                "direction": "column",
+                "canvas": false
+              },
+              "children": []
+            },
+            {
+              "id": "Zc2ewY64ml",
+              "type": "OrderListContent",
+              "props": {},
+              "style": {},
+              "name": "Order Detail Content",
+              "layout": {
+                "width": "1310px",
+                "height": "100%",
+                "direction": "column",
+                "canvas": false
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

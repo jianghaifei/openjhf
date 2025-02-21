@@ -1,0 +1,130 @@
+{
+  "id": "payment",
+  "type": "Page",
+  "props": {
+    "route": "/test",
+    "title": "测试页面"
+  },
+  "style": {},
+  "componentsTree": [
+    {
+      "id": "ROOT",
+      "type": "Container",
+      "props": {},
+      "style": {
+        "background": "#fff"
+      },
+      "name": "Container",
+      "layout": {
+        "direction": "row",
+        "grow": false,
+        "padding": "0",
+        "margin": "0",
+        "width": "100%",
+        "height": "100%",
+        "canvas": true
+      },
+      "children": [
+        {
+          "id": "RmfT7sgL6f",
+          "type": "Container",
+          "props": {},
+          "style": {},
+          "name": "Container",
+          "layout": {
+            "direction": "row",
+            "grow": false,
+            "padding": "0",
+            "margin": "0",
+            "width": "70%",
+            "height": "100%",
+            "canvas": true
+          },
+          "children": [
+            {
+              "id": "6MEmulnVN3",
+              "type": "Container",
+              "props": {},
+              "style": {},
+              "name": "Container",
+              "layout": {
+                "direction": "column",
+                "grow": false,
+                "padding": "0 0 16px 0",
+                "margin": "0",
+                "width": "600px",
+                "height": "100%",
+                "canvas": true
+              },
+              "children": [
+                {
+                  "id": "ZosJRBimyI",
+                  "type": "Container",
+                  "props": {},
+                  "style": {},
+                  "name": "Container",
+                  "layout": {
+                    "direction": "column",
+                    "grow": false,
+                    "padding": "0",
+                    "margin": "0",
+                    "width": "100%",
+                    "height": "40px",
+                    "canvas": true
+                  },
+                  "children": []
+                },
+                {
+                  "id": "z0Id_p-ytz",
+                  "type": "OrderSidebar",
+                  "props": {
+                    "summaryVisible": true,
+                    "orderListVisible": true,
+                    "embededFuncAreaVisible": true
+                  },
+                  "style": {},
+                  "name": "订单页",
+                  "layout": {
+                    "width": "600px",
+                    "height": "1020px",
+                    "direction": "column",
+                    "canvas": false
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "4mNCoYEJGE",
+              "type": "Payment",
+              "props": {},
+              "style": {},
+              "name": "支付",
+              "layout": {
+                "width": "55%",
+                "height": "100%",
+                "direction": "column",
+                "canvas": false
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "A0OzCmTLYm",
+          "type": "PaymentMethod",
+          "props": {},
+          "style": {},
+          "name": "支付方式",
+          "layout": {
+            "width": "574px",
+            "height": "100%",
+            "direction": "column",
+            "canvas": false
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,69 +1,82 @@
 {
-  "name": "openapi-web",
-  "version": "0.1.0",
-  "description": "openapi-web",
-  "private": true,
-  "main": "index.js",
+  "name": "@restosuite/canvas-designer",
+  "version": "0.0.9",
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "library": "rm -rf dist && BUILD_PATH='./dist' GENERATE_SOURCEMAP=false craco build --library && tsc -p tsconfig-library.json && tsc-alias -p tsconfig-library.json",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
+  "main": "dist/main.js",
+  "types": "dist/library.d.ts",
   "dependencies": {
-    "@ant-design/icons": "4.7.0",
-    "@dnd-kit/core": "^6.2.0",
-    "@dnd-kit/sortable": "^9.0.0",
-    "@dnd-kit/utilities": "^3.2.2",
-    "@tinymce/tinymce-react": "3.13.0",
-    "antd": "^4.24.16",
-    "axios": "0.21.1",
-    "dayjs": "^1.11.13",
-    "enquire-js": "^0.2.1",
-    "highlight.js": "10.7.3",
-    "immutable": "4.0.0",
-    "interweave": "12.9.0",
-    "lodash": "^4.17.21",
-    "moment": "2.29.1",
-    "nanoid": "3.1.30",
-    "rc-animate": "^3.1.1",
-    "rc-queue-anim": "^2.0.0",
-    "rc-scroll-anim": "^2.7.6",
-    "rc-tween-one": "^2.7.3",
-    "react": "17.0.2",
-    "react-device-detect": "2.1.2",
-    "react-dom": "17.0.2",
-    "react-highlight": "0.14.0",
-    "react-intersection-observer": "8.32.1",
-    "react-lazy-load-image-component": "1.5.1",
-    "react-redux": "7.2.5",
-    "react-responsive-carousel": "3.2.22",
-    "react-router-dom": "5.3.0",
-    "redux": "4.1.1",
-    "redux-devtools-extension": "2.13.9",
-    "redux-thunk": "2.3.0",
-    "utility": "1.16.1",
-    "webpack": "^4.43.0"
+    "@ant-design/icons": "^5.2.5",
+    "@cyrilis/code-generator": "^0.0.15",
+    "@cyrilis/flame": "^0.0.25",
+    "@douyinfe/semi-icons": "^2.40.0",
+    "@douyinfe/semi-ui": "^2.40.0",
+    "@types/react-grid-layout": "^1.3.2",
+    "axios": "^1.4.0",
+    "classnames": "^2.3.2",
+    "debounce": "^1.2.1",
+    "i18next": "^23.3.0",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "re-resizable": "^6.9.11",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-grid-layout": "^1.3.4",
+    "react-i18next": "^13.0.2",
+    "react-moveable": "^0.56.0",
+    "shallowequal": "^1.1.0",
+    "styled-components": "^6.0.7",
+    "tiny-invariant": "^1.3.1"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "babel-plugin-import": "1.13.3",
-    "customize-cra": "1.0.0",
-    "eslint": "7.11.0",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "6.0.0",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jsx-a11y": "6.3.1",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.21.5",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "http-proxy-middleware": "^3.0.3",
-    "less": "4.1.2",
-    "less-loader": "5.0.0",
-    "prettier": "1.18.2",
-    "react-app-rewired": "2.1.8",
-    "react-dev-utils": "11.0.3",
-    "react-scripts": "4.0.3",
-    "style-resources-loader": "1.4.1",
-    "webpack": "4.43.0"
+    "@babel/plugin-proposal-private-property-in-object": "*",
+    "@craco/craco": "^7.1.0",
+    "@craco/types": "^7.1.0",
+    "@svgr/webpack": "^8.0.1",
+    "@types/debounce": "^1.2.1",
+    "@types/react": "^18.2.14",
+    "@types/react-color": "^3.0.6",
+    "@types/react-dom": "^18.2.6",
+    "@types/uuid": "9.0.2",
+    "@types/webpack-env": "^1.18.1",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "antd": "^5.8.2",
+    "autoprefixer": "^10.4.14",
+    "craco-less": "^3.0.1",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "http-proxy-middleware": "^2.0.6",
+    "mobx": "^6.10.0",
+    "mobx-react-lite": "^4.0.3",
+    "postcss": "^8.4.26",
+    "react-color": "^2.19.3",
+    "tailwindcss": "^3.3.3",
+    "tsc-alias": "^1.8.8",
+    "typescript": "^5.0.2",
+    "uuid": "^9.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-scripts": {
+      "typescript": "^5"
+    },
+    "react-resizable": {
+      "react-dom": "^18"
+    },
+    "react-sortable-hoc": {
+      "react-dom": "^18"
+    }
   },
   "browserslist": {
     "production": [
@@ -76,5 +89,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "publishConfig": {
+    "registry": "https://nexus.restosuite.ai/repository/npm/"
+  },
+  "files": [
+    "/dist"
+  ],
+  "description": "Canvas Designer"
 }

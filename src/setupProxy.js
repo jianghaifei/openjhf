@@ -1,24 +1,16 @@
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { createProxyMiddleware } = require("http-proxy-middleware");
-
-module.exports = function(app) {
-  app.use(
-    "/bomenu", // 这里 '/api' 是你想要代理的路径
-    createProxyMiddleware({
-      target: "http://openapi-platform.dev.restosuite.ai", // 这里是你后端服务的地址
-      changeOrigin: true, // 用于改变请求头中的 Origin
-      pathRewrite: {
-        "^/bomenu": "" // 重写路径，去掉 '/api' 前缀
-      }
-    })
-  );
-  app.use(
-    "/boshop", // 这里 '/api' 是你想要代理的路径
-    createProxyMiddleware({
-      target: "https://bo.test.restosuite.ai", // 这里是你后端服务的地址
-      changeOrigin: true, // 用于改变请求头中的 Origin
-      pathRewrite: {
-        "^/boshop": "" // 重写路径，去掉 '/api' 前缀
-      }
-    })
-  );
+ 
+module.exports = function (app) {
+    app.use(
+        createProxyMiddleware(
+          "/test", //遇见/api-elm前缀的请求,就会触发该代理配置
+          {
+            target: "http://192.168.10.171:8080/", //请求转发给谁（能返回数据的服务器地址）
+            pathRewrite: { "^/test": "" },
+            changeOrigin: true, //控制服务器收到的响应头中Host字段的值
+            secure: false,
+          }
+        )
+      );
 };

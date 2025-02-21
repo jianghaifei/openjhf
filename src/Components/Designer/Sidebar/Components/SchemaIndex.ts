@@ -1,0 +1,5 @@
+export { default as Button } from './Button/lowcode'
+export { default as Input } from './Input/lowcode'
+export { default as Tag } from './Tag/lowcode'
+export { default as Badge } from './Badge/lowcode'
+export { default as QRCode } from './QRCode/lowcode'
