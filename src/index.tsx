@@ -1,15 +1,16 @@
-import { BrowserRouter } from 'react-router-dom'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import Router from './Router/index.tsx'
-import StoreContext from './Store/storeContext.ts'
-import RootStore from './Store/root.ts'
+import { GenerateRoutes } from "@restosuite/bo-core";
 
-const root = ReactDOM.createRoot(document.getElementById('root')!)
-root.render(
-  <StoreContext.Provider value={new RootStore()}>
-    <BrowserRouter>
-      <Router></Router>
-    </BrowserRouter>
-  </StoreContext.Provider>
-)
+import routes from "./routes";
+import * as metas from "./metas";
+
+import 'index.less';
+
+const { GenerateRoutes: generate } = GenerateRoutes;
+
+export function getRoutes() {
+  return generate(routes);
+}
+
+export function getPageMetas() {
+  return metas.pageMetas;
+}

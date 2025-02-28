@@ -1,0 +1,297 @@
+{
+    "pageName": "aggregate management",
+    "pageId": "aggregatemanagement",
+    "pageBizObjectCodes": [
+        "aggregatemanagement"
+    ],
+    "children": [
+        {
+            "blockId": "QueryForm",
+            "blockType": "form",
+            "maxColumns": 3,
+            "minColumns": 3,
+            "layout": 2,
+            "bizObjectCode": "aggregatemanagement",
+            "isRefWholeObject": false,
+            "fields": [
+                {
+                    "fieldType": "Text",
+                    "title": "规格名称",
+                    "fieldId": "ruleName"
+                }
+            ]
+        },
+        {
+            "blockId": "QueryFormlocation",
+            "blockType": "form",
+            "maxColumns": 3,
+            "minColumns": 3,
+            "layout": 2,
+            "bizObjectCode": "aggregatemanagement",
+            "isRefWholeObject": false,
+            "fields": [
+                {
+                    "fieldType": "Enum",
+                    "title": "绑定状态",
+                    "fieldId": "queryConfigFlag",
+                    "componentProps": {
+                        "allowClear": true
+                    },
+                    "data": {
+                        "defaultValue": "0"
+                    }
+                }
+            ]
+        },
+        {
+            "blockId": "QueryFormlocationCom",
+            "blockType": "form",
+            "maxColumns": 3,
+            "minColumns": 3,
+            "layout": 2,
+            "bizObjectCode": "aggregatemanagement",
+            "isRefWholeObject": false,
+            "fields": [
+                {
+                    "fieldType": "Text",
+                    "title": "门店名称",
+                    "fieldId": "shopName"
+                },
+                {
+                    "fieldType": "Text",
+                    "title": "门店ID",
+                    "fieldId": "shopId"
+                }
+            ]
+        },
+        {
+            "blockId": "TableList",
+            "blockType": "table",
+            "maxColumns": 1,
+            "minColumns": 1,
+            "layout": 1,
+            "bizObjectCode": "aggregatemanagement",
+            "isRefWholeObject": false,
+            "fields": [
+                {
+                    "fieldType": "Text",
+                    "title": "规则ID",
+                    "fieldId": "ruleId"
+                },
+                {
+                    "fieldType": "Text",
+                    "title": "规则名称",
+                    "fieldId": "ruleName"
+                },
+                {
+                    "fieldType": "Enum",
+                    "title": "派单方式",
+                    "fieldId": "dispatchMethod",
+                    "fieldProps": {
+                        "refObjectCode": "methodDelivery",
+                        "isEnumMap": true
+                    }
+                },
+                {
+                    "fieldType": "Text",
+                    "title": "派单优先级",
+                    "fieldId": "dispatchPriority"
+                }
+            ]
+        },
+        {
+            "blockId": "locationTable",
+            "blockType": "table",
+            "maxColumns": 1,
+            "minColumns": 1,
+            "layout": 1,
+            "bizObjectCode": "aggregatemanagement",
+            "isRefWholeObject": false,
+            "fields": [
+                {
+                    "fieldType": "Text",
+                    "title": "门店ID",
+                    "fieldId": "shopId"
+                },
+                {
+                    "fieldType": "Text",
+                    "title": "门店名称",
+                    "fieldId": "shopName"
+                },
+                {
+                    "fieldType": "Text",
+                    "title": "所在城市",
+                    "fieldId": "shopCity"
+                },
+                {
+                    "fieldType": "Text",
+                    "title": "地址",
+                    "fieldId": "shopAddress"
+                },
+                {
+                    "fieldType": "Text",
+                    "title": "配送规则",
+                    "fieldId": "ruleName"
+                },
+                {
+                    "fieldType": "Text",
+                    "title": "配送优先级",
+                    "fieldId": "priorityDelivery"
+                }
+            ]
+        },
+        {
+            "blockId": "ruleForm",
+            "blockType": "form",
+            "maxColumns": 1,
+            "minColumns": 1,
+            "layout": 0,
+            "bizObjectCode": "aggregatemanagement",
+            "isRefWholeObject": false,
+            "fields": [
+                {
+                    "fieldType": "Text",
+                    "title": "规则名称",
+                    "fieldId": "ruleName",
+                    "fieldProps": {
+                        "required": true
+                    },
+                    "componentProps": {
+                        "max": 200
+                    }
+                },
+                {
+                    "fieldType": "Enum",
+                    "title": "派单方式",
+                    "fieldId": "dispatchMethod",
+                    "fieldProps": {
+                        "renderType": "RadioGroup",
+                        "required": true
+                    },
+                    "data": {
+                        "defaultValue": "1"
+                    }
+                },
+                {
+                    "fieldType": "Enum",
+                    "title": "派单时机",
+                    "fieldId": "dispatchTimingMethod",
+                    "fieldProps": {
+                        "renderType": "CheckCustom",
+                        "required": true
+                    },
+                    "componentProps": {
+                        "type": "Radio",
+                        "direction": "vertical"
+                    },
+                    "data": {}
+                },
+                {
+                    "fieldType": "Number",
+                    "title": "自动派单持续时间",
+                    "fieldId": "autoDuration",
+                    "fieldProps": {
+                        "required": true
+                    },
+                    "componentProps": {
+                        "addonAfter": "分钟",
+                        "max": 60,
+                        "min": 1
+                    },
+                    "data": {
+                        "defaultValue": 20
+                    }
+                }
+            ]
+        },
+        {
+            "blockId": "timeForm",
+            "blockType": "form",
+            "maxColumns": 1,
+            "minColumns": 1,
+            "layout": 0,
+            "bizObjectCode": "aggregatemanagement",
+            "isRefWholeObject": false,
+            "fields": [
+                {
+                    "fieldType": "Text",
+                    "title": "启用自配送",
+                    "fieldId": "deliveryBySelf",
+                    "fieldProps": {
+                        "renderType": "Switch"
+                    },
+                    "data": {
+                        "defaultValue": false
+                    }
+                },
+                {
+                    "fieldType": "Enum",
+                    "title": "超时提醒",
+                    "fieldId": "noticeFlag",
+                    "fieldProps": {
+                        "renderType": "CheckCustom",
+                        "required": true,
+                        "wrapperFullWidth": true
+                    },
+                    "componentProps": {
+                        "type": "Radio"
+                    },
+                    "data": {}
+                },
+                {
+                    "fieldType": "Enum",
+                    "title": "超时语音设置",
+                    "fieldId": "noticeVoiceChoice",
+                    "fieldProps": {
+                        "renderType": "RadioGroup",
+                        "required": true
+                    },
+                    "data": {
+                        "defaultValue": "0"
+                    }
+                },
+                {
+                    "fieldType": "Image",
+                    "title": "超时自定义语音",
+                    "fieldId": "voiceFileUrl",
+                    "componentProps": {
+                        "text": "Calling.requirementsmp3filesizeshould"
+                    },
+                    "fieldProps": {
+                        "required": true,
+                        "renderType": "CallingPickupAudio"
+                    }
+                }
+            ]
+        },
+        {
+            "blockId": "dispatchPriority",
+            "blockType": "table",
+            "bizObjectCode": "aggregatemanagement",
+            "isRefWholeObject": false,
+            "fields": [
+                {
+                    "fieldType": "SelectCustom",
+                    "title": "配送公司",
+                    "fieldId": "companyDistribution"
+                },
+                {
+                    "fieldType": "Number",
+                    "title": "呼叫持续时间",
+                    "fieldId": "callDuration",
+                    "componentProps": {
+                        "addonAfter": "秒",
+                        "max": 9999,
+                        "min": 60
+                    }
+                }
+            ],
+            "tableConfig": {
+                "draggable": true,
+                "type": "EditTable",
+                "editable": true,
+                "columnConfig": []
+            }
+        }
+    ]
+}
