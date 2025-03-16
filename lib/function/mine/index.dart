@@ -1,0 +1,1 @@
+export 'mine_change_identity/mine_change_identity_view.dart';

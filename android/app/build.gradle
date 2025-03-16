@@ -1,0 +1,135 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+
+android {
+
+    namespace = "com.example.flutter_report_project"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    flavorDimensions "version"
+    // 配置渠道对应AppID，还支持配置其他渠道参数
+    productFlavors {
+//        println 'Hello, productFlavors!'
+        global {
+            dimension "version"
+        }
+        cn {
+            dimension "version"
+            applicationIdSuffix ".cn"
+        }
+    }
+
+    productFlavors.whenObjectAdded { flavor ->
+        if (flavor.name != 'cn') {
+            println 'Load Google services!'
+            apply plugin: 'com.google.gms.google-services'
+            apply plugin: 'com.google.firebase.crashlytics'
+        }else {
+            println 'Not load Google services!'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId = "ai.restosuite.inc.insight"
+
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
+        minSdkVersion = flutter.minSdkVersion
+        targetSdkVersion = flutter.targetSdkVersion
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
+    }
+
+    signingConfigs {
+
+        release {
+            keyAlias 'restosuite-pos'
+            keyPassword 'restosuite-pos'
+            storeFile file("../keystore/restosuite-keystore.jks")
+            storePassword 'RestoSuite@20230731'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+
+//        release {
+//            keyAlias 'restosuite-pos'
+//            keyPassword 'restosuite-pos'
+//            storeFile file("../../../../keystore/restosuite-keystore.jks")
+//            storePassword 'RestoSuite@20230731'
+//            v1SigningEnabled true
+//            v2SigningEnabled true
+//        }
+
+        debug {
+            keyAlias 'restosuite-pos'
+            keyPassword '123456'
+            storeFile file("../keystore/restosuite-keystore-debug.jks")
+            storePassword '123456'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.release
+        }
+        debug {
+            // Signing with the debug keys for now, so `flutter run --debug` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+// Apply Google Services plugin only for the flavors that require it
+//project.afterEvaluate {
+//    if (getGradle().getStartParameter().getTaskRequests().toString().contains("global")) {
+//        println 'Load Google services!'
+//        apply plugin: 'com.google.gms.google-services'
+//        apply plugin: 'com.google.firebase.crashlytics'
+//    }
+//}
+
+flutter {
+    source '../..'
+}
+

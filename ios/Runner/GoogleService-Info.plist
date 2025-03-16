@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAym9gEC0CEiEJGXqZzalOgMZt_oJYodtk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>725096236382</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ai.restosuite.inc.boss.report</string>
+	<key>PROJECT_ID</key>
+	<string>rs-insight</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rs-insight.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:725096236382:ios:309ac83769a980fa37bbcf</string>
+</dict>
+</plist>
